@@ -1,0 +1,1 @@
+cordova.define("com.neversink.idcarddetective.idcard",function(e,c,o){var n=e("cordova/exec"),r=function(){};r.prototype.recognize=function(e,c,o){n(e,c,"Idcard","recognize",[o])};var d=new r;o.exports=d});

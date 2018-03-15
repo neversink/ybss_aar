@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/light7.min.css">
+	<script type="text/javascript" src="js/tools_func.js"></script>
+
+	<script type='text/javascript' src='js/jquery-3.1.0.js' charset='utf-8'></script>
+	<script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='js/transformer.js' charset='utf-8'></script>
+<script type='text/javascript' charset='utf-8' src="js/common_function.js"></script>
+		<script type='text/javascript' charset='utf-8' src="js/component_func.js"></script>
+		<script type='text/javascript' charset='utf-8' src="js/storage_func.js"></script>
+	<!-- 自定义css样式 -->
+	<link rel="stylesheet" href="css/mycss.css">
+
+	<script type="text/javascript">
+		var procmode = getArgs().procmode;
+		var quxcun = get_current_quxcun()
+		var all_full_addr = get_current_all_full_addr();
+
+		function init() {
+			$('#quxcun').html(quxcun);
+			$('#all_full_addr').html(all_full_addr);
+
+			$('input[name="systemid"]').val(get_current_system_id());
+			$('input[name="all_full_addr"]').val(get_current_all_full_addr());
+			$('input[name="procmode"]').val(procmode);
+
+			if(procmode == "PMINSERT") {
+				$('input[name="czlx"]').val("xz");
+			} else if(procmode == "PMUPDATE") {
+				$('input[name="czlx"]').val("bg");
+			} else { //procmode == "PMDETAIL"
+				$('#save_btn_div').hide();
+
+				var ryxxData = getCurrentRyItem();
+				tlog("ry", JSON.stringify(ryxxData));
+				loadDataToForm(ryxxData);
+
+				$('input[name="zjhm"]').val(ryxxData.pid);
+
+				$('input[name="zjhm"]').attr("readOnly", "true");
+				$('select[name="zjlx"]').attr("disabled", "disabled");
+				$('input[name="name"]').attr("readOnly", "true");
+				$('input[name="lxfs"]').attr("readOnly", "true");
+			}
+		}
+		$(function() {
+			$('input[name="zjhm"]').blur(function() {
+				if($('select[name="zjlx"]').val() == "居民身份证")
+					getSfzXx($('input[name="zjhm"]').val(), "name", "lxfs", "", "", "");
+			});
+		})
+	</script>
+
+	<body onload="init();">
+		<!-- 头部 -->
+		<header class="bar bar-nav" style="background: #1c88e6;">
+			<a class="icon icon-left pull-left" style="color: #FFFFFF;" onclick="history.go(-1)"></a>
+			<span class="top-title">访客</span>
+		</header>
+
+		<!-- 内容 -->
+		<div class="content">
+			<!-- 地址信息 -->
+			<div class="history">
+				<div class="history-title" style="color: #0a8ddf; font-size: .8rem;">
+					<img src="img/cj_address.png" style="height: 1.0rem; vertical-align: middle; margin-right: .2rem;" /> 地址信息
+				</div>
+				<div style="background: #E3E3E3; height: 1px; width: 100%;"></div>
+				<div class="history-menu-label" style="padding-left: .5rem; padding-bottom: 0;">
+					<span id="quxcun" style="display: block; font-size: .8rem;"></span> <span id="all_full_addr"></span>
+				</div>
+			</div>
+
+			<form id="form">
+
+				<input type="hidden" name="systemid" value="" />
+				<input type="hidden" name="all_full_addr" value="" />
+
+				<!-- 人员信息 -->
+				<div class="history">
+					<div class="history-title" style="color: #0a8ddf; font-size: .8rem;">
+						<img src="img/cj_house.png" style="height: 1.0rem; vertical-align: middle; margin-right: .2rem;" /> 人员信息
+					</div>
+					<div style="background: #E3E3E3; height: 1px; width: 100%;"></div>
+					<!-- 基本信息 -->
+					<div class="list-block" style="margin: 0 .75rem;">
+						<ul style="border-top: 0;">
+
+							<li>
+								<div class="item-content">
+									<div class="item-inner" style="border: 0;">
+										<div class="item-title label">证件类型<span class="table-redstar">*</span></div>
+										<div class="item-input">
+											<select name="zjlx">
+												<option>请选择</option>
+												<option value="居民身份证">居民身份证</option>
+												<option value="护照">护照</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner" style="border: 0;">
+										<div class="item-title label">证件号码<span class="table-redstar">*</span></div>
+										<div class="item-input">
+											<input type="text" name="zjhm" placeholder="请输入证件号码">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner" style="border: 0;">
+										<div class="item-title label">姓　　名<span class="table-redstar">*</span></div>
+										<div class="item-input">
+											<input type="text" name="name" placeholder="请输入姓名">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner" style="border: 0;">
+										<div class="item-title label">联系方式</div>
+										<div class="item-input">
+											<input type="text" name="lxfs" placeholder="单行输入" onblur="isTelNum(this)">
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</form>
+
+			<div class="content-block" id="save_btn_div" style="margin: .5rem;">
+				<a id="save_btn" href="javascript:void(0);" class="button button-big button-fill">保　存</a>
+			</div>
+		</div>
+	</body>
+
+</html>

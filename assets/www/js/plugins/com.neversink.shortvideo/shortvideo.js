@@ -1,0 +1,1 @@
+cordova.define("com.neversink.shortvideo.shortvideo",function(o,e,r){var t=o("cordova/exec"),n=function(){};n.prototype.record=function(o,e,r){t(o,e,"Shortvideo","record",[r])},n.prototype.play=function(o,e,r){t(o,e,"Shortvideo","play",[r])};var c=new n;r.exports=c});

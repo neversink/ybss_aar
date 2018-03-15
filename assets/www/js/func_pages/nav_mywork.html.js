@@ -1,0 +1,1 @@
+function click_my(o){switch(o){case 1:window.location.href="mywork_wdgz.html";break;case 2:$.toast("功能开发中...");break;case 3:$.toast("功能开发中...");break;case 4:$.toast("功能开发中...")}}window.onload=function(){$("#userid").html(sessionStorage.userid),$("#v_div").html("当前版本"+version)};

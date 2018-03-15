@@ -1,0 +1,1 @@
+cordova.define("com.neversink.wormhole.wormhole",function(o,e,r){var n=o("cordova/exec"),t=function(){};t.prototype.traversing=function(o,e,r){n(o,e,"Wormhole","traversing",[r])};var c=new t;r.exports=c});

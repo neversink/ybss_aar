@@ -1,0 +1,22 @@
+<!DOCTYPE HTML><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=yes"><title>二维码分享</title></head><link rel="stylesheet" href="css/light7.min.css"><link rel="stylesheet" href="css/mycss.css"><script src="js/jquery-3.1.0.js" charset="utf-8"></script><script src="js/light7.min.js" charset="utf-8"></script><script src="js/qrcode.js"></script><script src="js/tools_func.js" charset="utf-8"></script><script charset="utf-8" src="js/common_function.js"></script><script charset="utf-8" src="js/component_func.js"></script><script charset="utf-8" src="js/storage_func.js"></script><style>body {
+			background: #fff;
+		}
+		
+		.demo {
+			width: 200px;
+			margin: 2.5rem auto 0 auto;
+		}
+		
+		.demo p {
+			line-height: 30px
+		}
+		
+		.show_dwmc {
+			color: #000;
+			margin: 5.0rem auto 0 auto;
+			text-align: center;
+		}
+		
+		#code {
+			margin-top: 10px
+		}</style><script>function erweima(){var e,r=getArgs().dwid,t=getArgs().dwmc;$("#dwmc").html(t);var o="http://222.76.243.213:5370/sspt/xxxx_edit_xz_cjry.jsp?dwid="+r+"&dwmc="+encodeURI(t);for(console.log(o);o.length>192&&o.length<220;)o+="  ";e&&e.clear(),e=new QRCode(document.getElementById("code"),{width:200,height:200}),e.makeCode(o)}function toUtf8(e){var r,t,o,d;for(r="",o=e.length,t=0;t<o;t++)d=e.charCodeAt(t),d>=1&&d<=127?r+=e.charAt(t):d>2047?(r+=String.fromCharCode(224|d>>12&15),r+=String.fromCharCode(128|d>>6&63),r+=String.fromCharCode(128|d>>0&63)):(r+=String.fromCharCode(192|d>>6&31),r+=String.fromCharCode(128|d>>0&63));return r}</script><body onload="erweima()"><header class="bar bar-nav" style="background: #1c88e6"><a class="icon icon-left pull-left" style="color: #FFFFFF" onclick="history.go(-1)"></a> <span class="top-title">单位二维码</span></header><div id="main"><div class="show_dwmc" id="dwmc"></div><div class="demo"><dizv id="code"></dizv></div></div><br></body></html>

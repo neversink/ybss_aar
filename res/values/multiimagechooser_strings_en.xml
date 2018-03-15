@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="multi_app_name">多图片选择器</string>
+    <string name="free_version_label">剩余图片: %d</string>
+    <string name="error_database">打开图片数据库出错</string>
+    <string name="requesting_thumbnails">生成缩略图中,请稍等</string>
+    <string name="discard">取消</string>
+    <string name="done">确定</string>
+</resources>

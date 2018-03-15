@@ -1,0 +1,1 @@
+cordova.define("cordova-hot-code-push-local-dev-addon.chcpLocalDev",function(o,c,e){function d(o){chcp.fetchUpdate()}var n=o("cordova/exec"),a=o("cordova/channel"),v="HotCodePushLocalDevMode",I={INITIALIZE:"jsInitPlugin"};a.onCordovaReady.subscribe(function(){n(d,null,v,I.INITIALIZE,[])})});

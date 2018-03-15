@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.tchsoft.xmssgl" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="HotCodePush">
+        <param name="android-package" value="com.nordnetab.chcp.main.HotCodePushPlugin" />
+    </feature>
+    <feature name="HotCodePushLocalDevMode">
+        <param name="android-package" value="com.nordnetab.chcp.localdev.HotCodePushLocalDevPlugin" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
+    <feature name="ImagePicker">
+        <param name="android-package" value="com.synconset.ImagePicker" />
+    </feature>
+    <feature name="Idcard">
+        <param name="android-package" value="com.idcard.IdcardDetective" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="Shortvideo">
+        <param name="android-package" value="com.neversink.shortvideo.Shortvideo" />
+    </feature>
+    <feature name="Wormhole">
+        <param name="android-package" value="com.neversink.wormhole.Wormhole" />
+    </feature>
+    <feature name="BaiduLocation">
+        <param name="android-package" value="com.qdc.plugins.baidu.BaiduLocation" />
+    </feature>
+    <feature name="Toast">
+        <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
+    <name>厦门四实管理</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <icon src="res/icon.png" />
+    <splash src="res/splash.png" />
+    <content src="home_map.html" />
+    <access origin="http://*" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="ErrorUrl" value="file:///android_asset/www/error_page.html" />
+    <preference name="loadUrlTimeoutValue" value="60000" />
+    
+    <chcp>
+        <local-development enabled="false" />
+        <config-file url="http://xmssgl2.oss-cn-shanghai.aliyuncs.com/chcp.json" />
+    </chcp>
+</widget>

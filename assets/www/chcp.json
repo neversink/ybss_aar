@@ -1,0 +1,12 @@
+{
+  "name": "xmssgl",
+  "ossbucket": "xmssgl",
+  "ossprefix": "",
+  "ossregion": "cn-shanghai",
+  "ossendpoint": "",
+  "ios_identifier": "",
+  "android_identifier": "com.tchsoft.xmssgl",
+  "update": "now",
+  "content_url": "http://xmssgl.oss-cn-shanghai.aliyuncs.com",
+  "release": "2017.05.18-18.26.56"
+}
